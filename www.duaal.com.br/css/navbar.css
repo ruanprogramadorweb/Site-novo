@@ -1,0 +1,125 @@
+/* nav bar */
+
+.navbar {
+    position: relative;
+    /* Makes sure the navbar content appears on top of the image */
+    z-index: 1;
+    /* Puts the navbar content above the image */
+}
+
+.navbar-brand img {
+    height: 40px;
+    /* Adjust this to fit your navbar height */
+    width: auto;
+    /* Ensures aspect ratio is maintained */
+    padding: 5px;
+}
+
+.navbar-nav {
+    gap: 10px;
+    /* Adds space between buttons */
+}
+
+.welcome-text {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    white-space: nowrap;
+}
+
+@media (max-width: 500px) {
+    .welcome-text {
+        display: none;
+    }
+}
+
+.nav-item.dropdown.show>.nav-link {
+    text-decoration: underline !important;
+}
+
+.fullwidth-row {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    /* Makes sure the row doesn't interfere with other elements */
+}
+
+.nav-link.dropdown-toggle.show {
+    text-decoration: underline;
+}
+
+/* Medium devices (<=768px) */
+
+@media (max-width: 768px) {
+    .nav-link {
+        color: #fefcec !important;
+    }
+    .nav-button {
+        width: auto;
+        /* Let the text decide the width */
+        background-color: transparent;
+        /* Remove background */
+        border-radius: 0;
+        /* Remove rounded corners */
+        padding: 5px 10px;
+        /* Adjust padding */
+    }
+    .nav-button:hover {
+        background-color: transparent;
+        /* No hover effect */
+    }
+}
+
+/* Medium devices (â‰¥768px) */
+
+@media (min-width: 768px) {
+    .nav-link {
+        color: #fefcec !important;
+    }
+    .nav-button {
+        width: auto;
+        /* Let the text decide the width */
+        background-color: transparent;
+        /* Remove background */
+        border-radius: 0;
+        /* Remove rounded corners */
+        padding: 5px 10px;
+        /* Adjust padding */
+    }
+    .nav-button:hover {
+        background-color: transparent;
+        /* No hover effect */
+    }
+}
+
+/* Desktop devices (â‰¥992px) */
+
+@media (min-width: 992px) {
+    .nav-link {
+        color: #fefcec !important;
+        /* Ensures the text stays visible */
+    }
+    .nav-button {
+        display: inline-block;
+        /* Ensures they behave like buttons */
+        width: 150px;
+        /* Set a fixed width for uniformity */
+        font-size: small;
+        text-align: center;
+        /* Centers text inside */
+        padding: 10px 15px;
+        /* Adds spacing inside the button */
+        background-color: #ffffff !important;
+        /* Set your desired background color */
+        border-radius: 50px;
+        /* Makes them pill-shaped */
+        border: none;
+        transition: background-color 0.3s ease-in-out;
+    }
+    .nav-button:hover {
+        /* Darker shade on hover */
+        background-color: #cccccc !important;
+    }
+}

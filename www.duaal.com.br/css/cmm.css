@@ -1,0 +1,347 @@
+@font-face {
+    font-family: OldMoutOrchardHand;
+    src: url("../assets/fonts/OldMoutOrchardHand.otf") format("opentype");
+}
+
+@font-face {
+    font-family: OldMoutSchoolbookCond;
+    src: url("../assets/fonts/OldMoutSchoolbookCond.otf") format("opentype");
+}
+
+* {
+    font-family: OldMoutSchoolbookCond;
+}
+
+.all-caps {
+    font-family: OldMoutOrchardHand;
+}
+
+.pineapple-and-raspberry {
+    color: #d50037;
+}
+
+.kiwi-and-lime {
+    color: #61a50e;
+}
+
+.berries-and-cherries {
+    color: #81266a;
+}
+
+.strawberry-and-apple {
+    color: #e1251b;
+}
+
+.cream {
+    color: #fefcec;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #f4f2e3;
+    touch-action: none;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    /* pushes the booter to the bottom */
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.no-click {
+    pointer-events: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Header */
+
+.welcome {
+    max-width: 90%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* @media (max-width: 768px) {
+    .welcome {
+        max-height: 25%;
+        width: auto;
+    }
+} */
+
+.floater {
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .floater {
+        display: none;
+    }
+}
+
+#header-section img.floater {
+    position: relative;
+    transition: opacity 0.3s ease;
+}
+
+/* Three */
+
+.canvas-row {
+    flex: 1 1 auto;
+    min-height: 0;
+}
+
+#three-canvas {
+    width: 50%;
+    height: 50%;
+    display: block;
+}
+
+.fade-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    /* Adjust for how much fading you want */
+    /* background: url('../assets/menu/fade-top.png');
+    background-size: 100% 100%; */
+    background: linear-gradient(to bottom, #fefcecff, #fefcec00);
+    /* So it doesnâ€™t block interactions */
+    pointer-events: none;
+}
+
+.instruction-modal-fade {
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.instruction-modal-fade-out {
+    opacity: 0;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.x-small {
+    font-size: 0.5em;
+}
+
+.footer-img {
+    vertical-align: bottom !important;
+    border: 0 !important;
+}
+
+/* 
+.navbar a.nav-link:hover,
+.navbar a.nav-link:focus {
+    color: white !important;
+} */
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+.dropdown-menu-center {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+
+/* ===== Modal Wrapper ===== */
+
+#customModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1060;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* Optional content wrapper max width */
+
+#customModal .modal-content-wrapper {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* ===== Carousel Backdrop ===== */
+
+.carousel-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+}
+
+/* ===== Carousel Wrapper ===== */
+
+@media (orientation: landscape) {
+    #carouselWrapper {
+        width: 70vw;
+        max-height: 90vh;
+        height: auto;
+    }
+}
+
+@media (orientation: portrait) {
+    #carouselWrapper {
+        width: 92vw;
+        max-width: 92vw;
+        max-height: 80vh;
+        height: auto;
+    }
+}
+
+/* Disable slide transition if needed */
+
+.no-transition .carousel-item {
+    transition: none !important;
+}
+
+/* ===== Modal ===== */
+
+.modal-img {
+    display: block;
+    max-width: 85vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+@media (orientation: landscape) {
+    .modal-img {
+        max-width: 80vw;
+        max-height: 90vh;
+    }
+}
+
+@media (orientation: portrait) {
+    .modal-img {
+        max-width: 95vw;
+        max-height: 95vh;
+    }
+}
+
+/* ===== Close Button ===== */
+
+.carousel-close-button {
+    position: absolute;
+    top: -15px;
+    right: -10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    width: 3em;
+    height: 3em;
+}
+
+.carousel-close-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* ===== Arrow Navigation ===== */
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.left-arrow {
+    left: -30px;
+}
+
+.right-arrow {
+    right: -25px;
+}
+
+.carousel-arrow img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Video */
+
+#splash-overlay {
+    background-color: black;
+    overflow: hidden;
+    z-index: 1100;
+}
+
+#splash-overlay video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+#splash-overlay.fade-out {
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+}
+
+#planeOverlay {
+    position: absolute;
+    top: 10%;
+    left: -9999px;
+    opacity: 0;
+    width: 80%;
+    height: auto;
+    -index: 2;
+}
+
+@media (orientation: landscape) {
+    #planeOverlay {
+        height: 40%;
+        width: auto;
+    }
+}
+
+@media (orientation: portrait) {
+    #planeOverlay {
+        width: 80%;
+        height: auto;
+    }
+}

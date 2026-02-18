@@ -1,0 +1,62 @@
+/* footer */
+
+/* 
+@media (max-width: 767.98px) and (orientation: landscape) {
+    footer {
+        display: none !important;
+    }
+} */
+
+@media (max-height: 500px) and (orientation: landscape) {
+    footer {
+        display: none !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    footer img[alt="ASDA"],
+    footer img[alt="Sainsbury's"],
+    footer img[alt="Morrisons"],
+    footer img[alt="Tesco"],
+    footer img[alt="Ocado"],
+    footer img[alt="Amazon"] {
+        height: 28px;
+    }
+    .footer-socials img {
+        height: 18px;
+    }
+}
+
+@media (max-width: 600.98px) {
+    footer img[alt="ASDA"],
+    footer img[alt="Sainsbury's"],
+    footer img[alt="Morrisons"],
+    footer img[alt="Tesco"],
+    footer img[alt="Ocado"],
+    footer img[alt="Amazon"] {
+        height: 18px;
+    }
+}
+
+/* Default: show desktop version, hide portrait */
+
+.footer-desktop {
+    display: flex;
+}
+
+.footer-portrait {
+    display: none;
+}
+
+/* Portrait mode only: hide desktop version, show portrait */
+
+@media screen and (orientation: portrait) {
+    .footer-desktop {
+        display: none !important;
+    }
+    .footer-portrait {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+    }
+}
